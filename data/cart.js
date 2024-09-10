@@ -31,6 +31,7 @@ export function AddToCart(productId) {
       quantity: 1
     });
   }
+  console.log('zbab');
   saveToStorge();
 }
 
