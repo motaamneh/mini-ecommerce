@@ -8,9 +8,11 @@ import { renderPaymentSummary } from './paymentSummary.js';
 
 export function renderOrderSummary() {
   let cartSummaryHTML = '';
+  let numOfItems=0;
 
   cart.forEach((cartItem) => {
     const productId = cartItem.productId;
+    numOfItems++;
 
     const matchingProduct = getProducts(productId);
 
@@ -138,4 +140,7 @@ export function renderOrderSummary() {
         renderPaymentSummary();
       });
     });
+
+  document.querySelector('.js-items-count').innerHTML = `${numOfItems} items`;
+    
 }
